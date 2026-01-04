@@ -2,34 +2,36 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>ОГРОМНАЯ КНОПКА</title>
+    <title>ТЫКНИ КУДА УГОДНО</title>
     <style>
         body {
             margin: 0;
             height: 100vh;
+            background: black;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: radial-gradient(circle, #222, #000);
-        }
-
-        .big-button {
-            transform: scale(50); /* ← ВОТ ТУТ РАЗМЕР */
+            font-size: 40px;
+            font-family: Arial, sans-serif;
             cursor: pointer;
+            user-select: none;
         }
     </style>
 </head>
 <body>
 
-<div class="big-button">
-    <iframe
-        width="110"
-        height="200"
-        src="https://www.myinstants.com/instant/diadia-sasha-30914/embed/"
-        frameborder="0"
-        scrolling="no">
-    </iframe>
-</div>
+ТЫКНИ В ЛЮБОЕ МЕСТО
+
+<audio id="sound" src="https://www.myinstants.com/media/sounds/diadia-sasha.mp3"></audio>
+
+<script>
+    document.body.addEventListener('click', () => {
+        const audio = document.getElementById('sound');
+        audio.volume = 1.0;
+        audio.play();
+    }, { once: true });
+</script>
 
 </body>
 </html>
