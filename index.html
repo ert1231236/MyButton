@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>РЖАЧ КНОПКА</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+    }
+
+    button {
+      font-size: 48px;        /* размер текста */
+      padding: 40px 80px;     /* размер кнопки */
+      border-radius: 20px;    /* скругление */
+      cursor: pointer;
+      border: none;
+      background: #ff3c00;
+      color: white;
+      box-shadow: 0 0 30px #ff3c00;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+
+<button id="fun">ЖМИ!!!</button>
+
+<audio id="sound" src="https://www.myinstants.com/media/sounds/vizg-svini.mp3"></audio>
+
+<script>
+  document.getElementById("fun").onclick = () => {
+    const s = document.getElementById("sound");
+    s.currentTime = 0;
+    s.play();
+  };
+</script>
+
+</body>
+</html>
